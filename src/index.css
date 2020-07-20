@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:hover.nav-item:not(.active) {
+  background-color: #2ea8b2
+}
+
+.hero {
+  min-height: 80vh;
+  height: 640px;
+  background-position: center center;
+  background-size: cover;
+  margin-top: -60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, rgba(0, 60, 224, 0.9), rgba(44, 187, 187, 0.9)), url('bg3.jpg')
+}
