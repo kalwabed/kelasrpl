@@ -1,4 +1,11 @@
 import React from 'react'
+import {
+    IoIosHome,
+    IoMdStarOutline,
+    IoMdQuote,
+    IoLogoGithub,
+    IoLogoFacebook,
+} from 'react-icons/io'
 import moment from 'moment'
 import {
     Card,
@@ -9,6 +16,7 @@ import {
     Col,
     CardImg,
     CardHeader,
+    CardLink,
 } from 'reactstrap'
 import { PropsCardHero, Staff } from '../types'
 
@@ -33,16 +41,26 @@ const CardHero: React.FC<PropsCardHero> = ({ staff }: PropsCardHero) => {
                             <CardTitle tag="h4">
                                 <u>{st.name}</u>
                             </CardTitle>
-                            <CardText>Rumah: {st.address}</CardText>
-                            <CardText
-                                tag="span"
-                                className="badge badge-primary"
-                            >
+                            <CardText>
+                                <IoIosHome /> {st.address}
+                            </CardText>
+                            <IoMdStarOutline />
+                            <CardText tag="span" className="badge badge-light">
                                 Banyuwangi,{' '}
                                 {moment(st.birthDate).format('DD-MMM-YYYY')}
                             </CardText>
                             <br />
-                            <CardText tag="code">{st.description}</CardText>
+                            <CardText tag="code">
+                                <IoMdQuote /> {st.description}
+                            </CardText>{' '}
+                            <br />
+                            <hr />
+                            <CardLink href="#">
+                                <IoLogoGithub /> Github
+                            </CardLink>
+                            <CardLink href="#">
+                                <IoLogoFacebook /> Facebook
+                            </CardLink>
                         </CardBody>
                     </Card>
                 </Col>
