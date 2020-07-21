@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../components/Header'
 import {
     Container,
     Jumbotron,
@@ -8,13 +7,16 @@ import {
     UncontrolledCarousel,
 } from 'reactstrap'
 
+import Header from '../components/Header'
+import CardHero from '../components/CardHero'
+
 const Index = () => {
     return (
         <>
             <Header navLink="/" />
             <section className="hero"></section>
             <Container>
-                <h1>saya</h1>
+                <CardHero />
             </Container>
         </>
     )

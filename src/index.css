@@ -27,3 +27,25 @@ code {
   align-items: center;
   background-image: linear-gradient(to right, rgba(0, 60, 224, 0.9), rgba(44, 187, 187, 0.9)), url('bg3.jpg')
 }
+
+.hero-about {
+  min-height: 80vh;
+  height: 640px;
+  background-position: center center;
+  background-size: cover;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-about img {
+  margin-top: -10px;
+  max-height: 15rem;
+  min-height: 80%;
+}
+
+/* 
+:hover.hi {
+  opacity: 0;
+} */

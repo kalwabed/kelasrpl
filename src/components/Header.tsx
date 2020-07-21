@@ -17,20 +17,18 @@ const Header: React.FC<PropsHeader> = ({ navLink = '' }: PropsHeader) => {
 
     return (
         <>
-            <Container>
-                <Navbar
-                    expand="md"
-                    color={navLink !== '/' ? 'dark' : ''}
-                    className={
-                        navLink === '/' ? 'p-0 navbar-dark' : 'navbar-dark p-1'
-                    }
-                >
-                    {/* TODO: bikin halaman about mirip2 home */}
+            <Navbar
+                expand="md"
+                dark
+                color={navLink !== '/' ? 'dark' : ''}
+                className="p-0 navbar-dark"
+            >
+                <Container>
                     <Link to="/" className="navbar-brand mx-3">
                         #kitarpl1
                     </Link>
                     <NavbarToggler onClick={toggle} />
-                    <Collapse isOpen={isOpen} navbar>
+                    <Collapse isOpen={isOpen} navbar color="primary">
                         <Nav className="mr-2" navbar>
                             <NavItem
                                 className={navLink === '/' ? 'active' : ''}
@@ -50,8 +48,8 @@ const Header: React.FC<PropsHeader> = ({ navLink = '' }: PropsHeader) => {
                             </NavItem>
                         </Nav>
                     </Collapse>
-                </Navbar>
-            </Container>
+                </Container>
+            </Navbar>
         </>
     )
 }
