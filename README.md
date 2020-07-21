@@ -1,5 +1,6 @@
 
 > this app is under development
+> open to contribute
 
 ## Available Scripts
 
