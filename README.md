@@ -1,5 +1,5 @@
 
-> this app is under development
+> this app is under development <br/>
 > open to contribute
 
 ## Available Scripts
