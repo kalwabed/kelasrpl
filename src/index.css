@@ -45,7 +45,11 @@ code {
   min-height: 80%;
 }
 
-/* 
-:hover.hi {
-  opacity: 0;
-} */
+@media screen and (max-width:900px) {
+  .hero-about img {
+    margin-top: -300px;
+    max-height: 15rem;
+    min-height: 30%;
+    padding: 0;
+  }
+}

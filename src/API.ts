@@ -1,7 +1,6 @@
-import React from 'react'
-
 export const fetchStaff = async () => {
-    const endpoint = 'https://serverkelas-rpl.herokuapp.com/v1'
+    console.log(process.env.ENDPOINT)
+    const endpoint = String(process.env.REACT_APP_ENDPOINT) || ''
     const data = await (await fetch(endpoint)).json()
-    console.log(data)
+    return data.siswa.map((d: any) => d)
 }
