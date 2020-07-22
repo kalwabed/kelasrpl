@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-    IoIosHome,
-    IoMdStarOutline,
-    IoMdQuote,
-    IoLogoGithub,
-    IoLogoFacebook,
-} from 'react-icons/io'
+import { IoIosHome, IoMdStarOutline, IoMdQuote } from 'react-icons/io'
 import moment from 'moment'
 import {
     Card,
@@ -16,9 +10,10 @@ import {
     Col,
     CardImg,
     CardHeader,
-    CardLink,
 } from 'reactstrap'
+
 import { PropsCardHero, Staff } from '../types'
+import SocialChecker from '../utils/socialChecker'
 
 const CardHero: React.FC<PropsCardHero> = ({ staff }: PropsCardHero) => {
     const posChecker = (pos: number) => {
@@ -46,8 +41,9 @@ const CardHero: React.FC<PropsCardHero> = ({ staff }: PropsCardHero) => {
                             </CardText>
                             <IoMdStarOutline />
                             <CardText tag="span" className="badge badge-light">
-                                Banyuwangi,{' '}
-                                {moment(st.birthDate).format('DD-MMM-YYYY')}
+                                {st.birthPlace},{' '}
+                                {moment(st.birthDate).format('DD-MMM-YYYY')} (
+                                {moment(st.birthDate).toNow(true)})
                             </CardText>
                             <br />
                             <CardText tag="code">
@@ -55,12 +51,13 @@ const CardHero: React.FC<PropsCardHero> = ({ staff }: PropsCardHero) => {
                             </CardText>{' '}
                             <br />
                             <hr />
-                            <CardLink href="#">
-                                <IoLogoGithub /> Github
-                            </CardLink>
-                            <CardLink href="#">
-                                <IoLogoFacebook /> Facebook
-                            </CardLink>
+                            {st.socialId.map(sc => (
+                                <SocialChecker
+                                    name={sc.socialName}
+                                    url={sc.socialUrl}
+                                    key={st._id}
+                                />
+                            ))}
                         </CardBody>
                     </Card>
                 </Col>

@@ -3,7 +3,7 @@ import { Container, Spinner } from 'reactstrap'
 
 import Header from '../components/Header'
 import CardHero from '../components/CardHero'
-import { fetchStaff } from '../API'
+import { fetchStaff } from '../utils/API'
 
 const Index = () => {
     const [staff, setStaff] = useState<[]>([])
