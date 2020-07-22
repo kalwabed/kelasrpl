@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Spinner } from 'reactstrap'
+import { Container, Spinner, Row, Col } from 'reactstrap'
 
 import Header from '../components/Header'
 import CardHero from '../components/CardHero'
@@ -22,8 +22,35 @@ const Index = () => {
     return (
         <>
             <Header navLink="/" />
-            <section className="hero"></section>
+            <section className="hero">
+                <Container>
+                    <Row>
+                        <Col md={{ size: 8, offset: 2 }}>
+                            <div className="hero-text text-center">
+                                <div className="h3 hero-title">Hai Dunia</div>
+                                <p>
+                                    Selamat Datang di Laman Resmi{' '}
+                                    <span className="bld">
+                                        XII RPL 1 [2019/2020]
+                                    </span>{' '}
+                                    <div className="bld">
+                                        SMK Negeri 1 Banyuwangi
+                                    </div>
+                                </p>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+
             <Container>
+                <div
+                    className="text-center"
+                    style={{ margin: '3rem 0 3rem 0' }}
+                >
+                    <h1>Daftar Siswa</h1>
+                    <div className="divider mx-auto"></div>
+                </div>
                 {isLoading && (
                     <Spinner
                         style={{

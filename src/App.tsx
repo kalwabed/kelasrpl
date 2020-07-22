@@ -9,6 +9,13 @@ function App() {
             <Router>
                 <Route exact path="/" component={IndexPage} />
                 <Route path="/about" component={AboutPage} />
+                <footer>
+                    <div className="footer">
+                        <span className="d-none d-sm-inline-block">
+                            @kitarpl1.2020
+                        </span>
+                    </div>
+                </footer>
             </Router>
         </>
     )

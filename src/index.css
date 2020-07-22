@@ -28,6 +28,27 @@ code {
   background-image: linear-gradient(to right, rgba(0, 60, 224, 0.9), rgba(44, 187, 187, 0.9)), url('bg3.jpg')
 }
 
+.hero .hero-text {
+  color: #fff;
+
+}
+
+.hero .hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero .bld {
+  font-weight: bold;
+}
+
+footer {
+  background-color: #1265c5;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 12px;
+}
+
 .hero-about {
   min-height: 80vh;
   height: 640px;
@@ -37,6 +58,12 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.divider {
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(to right, rgba(0, 60, 224, 0.9), rgba(44, 187, 187, 0.9));
 }
 
 .hero-about img {
