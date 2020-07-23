@@ -14,6 +14,8 @@ export const fetchStudent = async () => {
             token = localStorage.getItem('student')
         }
 
+        console.log(process.env.REACT_APP_SECRET_KEY)
+
         const newData: any = jwt.verify(
             token,
             String(process.env.REACT_APP_SECRET_KEY)
