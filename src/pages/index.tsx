@@ -28,15 +28,15 @@ const Index = () => {
                         <Col md={{ size: 8, offset: 2 }}>
                             <div className="hero-text text-center">
                                 <div className="h3 hero-title">Hai Dunia</div>
-                                <p>
+                                <div>
                                     Selamat Datang di Laman Resmi{' '}
                                     <span className="bld">
                                         XII RPL 1 [2019/2020]
                                     </span>{' '}
-                                    <div className="bld">
+                                    <p className="bld">
                                         SMK Negeri 1 Banyuwangi
-                                    </div>
-                                </p>
+                                    </p>
+                                </div>
                             </div>
                         </Col>
                     </Row>

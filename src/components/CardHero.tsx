@@ -6,6 +6,7 @@ import {
     IoMdBowtie,
 } from 'react-icons/io'
 import moment from 'moment'
+import _ from 'lodash'
 import {
     Card,
     CardBody,
@@ -71,7 +72,7 @@ const CardHero: React.FC<PropsCardHero> = ({ staff }: PropsCardHero) => {
                                     <SocialChecker
                                         name={sc.socialName}
                                         url={sc.socialUrl}
-                                        key={st._id}
+                                        key={st._id + _.random(13 * 71, false)}
                                     />
                                 ))}
                             </CardBody>
