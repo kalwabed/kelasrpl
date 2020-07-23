@@ -3,16 +3,16 @@ import { Container, Spinner, Row, Col } from 'reactstrap'
 
 import Header from '../components/Header'
 import CardHero from '../components/CardHero'
-import { fetchStaff } from '../utils/API'
+import { fetchStudent } from '../utils/API'
 
 const Index = () => {
-    const [staff, setStaff] = useState<[]>([])
+    const [staff, setStaff] = useState<any[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     useEffect(() => {
         async function fetch() {
             setIsLoading(true)
-            const data = await fetchStaff()
+            const data = await fetchStudent()
             setStaff(data)
             setIsLoading(false)
         }
