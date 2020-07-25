@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import { Container } from 'reactstrap'
 
 const About = () => {
+    document.title = 'About | #kitarpl1'
     return (
         <>
             <Header navLink="/about" />
