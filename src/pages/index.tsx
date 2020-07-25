@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Container, Spinner, Row, Col } from 'reactstrap'
+import { Fade } from 'react-awesome-reveal'
 
 import Header from '../components/Header'
 import CardHero from '../components/CardHero'
@@ -10,6 +11,7 @@ const Index = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     useEffect(() => {
+        document.title = 'Home | #kitarpl1'
         async function fetch() {
             setIsLoading(true)
             const data = await fetchStudent()
@@ -27,16 +29,20 @@ const Index = () => {
                     <Row>
                         <Col md={{ size: 8, offset: 2 }}>
                             <div className="hero-text text-center">
-                                <div className="h3 hero-title">Hai Dunia</div>
-                                <div>
-                                    Selamat Datang di Laman Resmi{' '}
-                                    <span className="bld">
-                                        XII RPL 1 [2019/2020]
-                                    </span>{' '}
-                                    <p className="bld">
-                                        SMK Negeri 1 Banyuwangi
-                                    </p>
-                                </div>
+                                <Fade duration={3000}>
+                                    <div className="h3 hero-title">
+                                        Hai Dunia
+                                    </div>
+                                    <div>
+                                        Selamat Datang di Laman Resmi{' '}
+                                        <span className="bld">
+                                            XII RPL 1 [2019/2020]
+                                        </span>{' '}
+                                        <p className="bld">
+                                            SMK Negeri 1 Banyuwangi
+                                        </p>
+                                    </div>
+                                </Fade>
                             </div>
                         </Col>
                     </Row>

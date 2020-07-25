@@ -1,4 +1,5 @@
 import React from 'react'
+import { Fade } from 'react-awesome-reveal'
 import {
     IoIosHome,
     IoMdStarOutline,
@@ -7,15 +8,7 @@ import {
 } from 'react-icons/io'
 import moment from 'moment'
 import _ from 'lodash'
-import {
-    Card,
-    CardBody,
-    CardTitle,
-    CardText,
-    Row,
-    Col,
-    CardImg,
-} from 'reactstrap'
+import { Card, CardBody, CardTitle, CardText, Row, CardImg } from 'reactstrap'
 
 import { PropsCardHero, Staff } from '../types'
 import SocialChecker from '../utils/socialChecker'
@@ -32,7 +25,8 @@ const CardHero: React.FC<PropsCardHero> = ({ staff }: PropsCardHero) => {
         <>
             <Row>
                 {staff.map((st: Staff) => (
-                    <Col md={3} sm={1} key={st._id}>
+                    <Fade cascade key={st._id} className="col-sm-1 col-md-3">
+                        {/* <Col md={3} sm={1}> */}
                         <Card className="my-3 shadow">
                             <CardImg
                                 top
@@ -77,7 +71,8 @@ const CardHero: React.FC<PropsCardHero> = ({ staff }: PropsCardHero) => {
                                 ))}
                             </CardBody>
                         </Card>
-                    </Col>
+                        {/* </Col> */}
+                    </Fade>
                 ))}
             </Row>
         </>
