@@ -56,17 +56,17 @@ const Index = () => {
                 >
                     <h1>Daftar Siswa</h1>
                     <div className="divider mx-auto"></div>
+                    {isLoading && (
+                        <Spinner
+                            style={{
+                                width: '3rem',
+                                height: '3rem',
+                                marginTop: '3rem',
+                            }}
+                            color="primary"
+                        />
+                    )}
                 </div>
-                {isLoading && (
-                    <Spinner
-                        style={{
-                            width: '3rem',
-                            height: '3rem',
-                            marginTop: '3rem',
-                        }}
-                        color="primary"
-                    />
-                )}
 
                 {!isLoading && <CardHero staff={staff} />}
             </Container>
