@@ -24,3 +24,8 @@ export type Staff = {
         }
     ]
 }
+
+export interface stdContext {
+    staff: any[]
+    isLoading: boolean
+}

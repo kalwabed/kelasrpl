@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Container, Spinner, Row, Col } from 'reactstrap'
 import { Fade } from 'react-awesome-reveal'
 
 import Header from '../components/Header'
 import CardHero from '../components/CardHero'
-import { fetchStudent } from '../utils/API'
+import { useStdCtx } from '../contexts/StudentProvider'
 
 const Index = () => {
-    const [staff, setStaff] = useState<any[]>([])
-    const [isLoading, setIsLoading] = useState<boolean>(false)
-
-    useEffect(() => {
-        document.title = 'Home | #kitarpl1'
-        async function fetch() {
-            setIsLoading(true)
-            const data = await fetchStudent()
-            setStaff(data)
-            setIsLoading(false)
-        }
-        fetch()
-    }, [])
+    const { staff, isLoading } = useStdCtx()
 
     return (
         <>
@@ -67,7 +55,7 @@ const Index = () => {
                         />
                     )}
                 </div>
-
+                {/* !! */}
                 {!isLoading && <CardHero staff={staff} />}
             </Container>
         </>

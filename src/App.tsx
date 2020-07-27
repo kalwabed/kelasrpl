@@ -1,18 +1,25 @@
 import React from 'react'
+import { DiReact, DiCode } from 'react-icons/di'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+
 import IndexPage from './pages/index'
 import AboutPage from './pages/about'
+import StudentProvider from './contexts/StudentProvider'
 
 function App() {
     return (
         <>
             <Router>
-                <Route exact path="/" component={IndexPage} />
-                <Route path="/about" component={AboutPage} />
+                <StudentProvider>
+                    <Route exact path="/" component={IndexPage} />
+                    <Route path="/about" component={AboutPage} />
+                </StudentProvider>
                 <footer>
-                    <div className="footer">
-                        <span className="d-none d-sm-inline-block">
-                            @kitarpl1.2020
+                    <div className="footer text-center">
+                        <span className="">
+                            <DiCode className="h3" /> by <b>TeamRPL1</b> | Built
+                            with <DiReact className="h3" />
+                            <br />
                         </span>
                     </div>
                 </footer>

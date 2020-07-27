@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Fade } from 'react-awesome-reveal'
-import { IoMdQuote } from 'react-icons/io'
+import { IoMdQuote, IoMdArrowRoundForward } from 'react-icons/io'
 import {
     Card,
     CardBody,
@@ -50,6 +51,16 @@ const CardHero: React.FC<PropsCardHero> = ({ staff }: PropsCardHero) => {
                     ))}
                 </CardDeck>
             </Fade>
+            <Row>
+                <Col md={{ size: 10 }} />
+                <Col>
+                    <Link to="#">
+                        {' '}
+                        Show more
+                        <IoMdArrowRoundForward />
+                    </Link>
+                </Col>
+            </Row>
         </>
     )
 }
