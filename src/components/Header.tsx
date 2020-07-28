@@ -21,8 +21,8 @@ const Header: React.FC<PropsHeader> = ({ navLink = '' }: PropsHeader) => {
                 <Navbar
                     expand="md"
                     dark
-                    color={navLink !== '/' ? 'dark' : ''}
-                    className="p-0 navbar-dark"
+                    color={navLink !== '/' ? 'primary' : ''}
+                    className="navbar-dark fixed-top hero-nb mb-3"
                 >
                     <Container>
                         <Link to="/" className="navbar-brand mx-3">
