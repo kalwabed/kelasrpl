@@ -2,12 +2,13 @@ import React from 'react'
 import { Container, Spinner, Row, Col } from 'reactstrap'
 import { Fade } from 'react-awesome-reveal'
 
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import CardHero from '../components/CardHero'
 import { useStdCtx } from '../contexts/StudentProvider'
 
 const Index = () => {
-    const { staff, isLoading } = useStdCtx()
+    const { student, isLoading } = useStdCtx()
 
     return (
         <>
@@ -55,9 +56,9 @@ const Index = () => {
                         />
                     )}
                 </div>
-                {/* !! */}
-                {!isLoading && <CardHero staff={staff} />}
+                {!isLoading && <CardHero student={student} />}
             </Container>
+            {!isLoading && <Footer />}
         </>
     )
 }

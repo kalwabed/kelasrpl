@@ -7,21 +7,21 @@ import { stdContext } from '../types'
 const studentContext = createContext<stdContext | undefined>(undefined)
 
 const StudentProvider = ({ children }: any) => {
-    const [staff, setStaff] = useState<any[]>([])
+    const [student, setStudent] = useState<any[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     useEffect(() => {
         const fetchs = async () => {
             setIsLoading(true)
             const data = await fetchStudent()
-            setStaff(data)
+            setStudent(data)
             setIsLoading(false)
         }
         fetchs()
     }, [])
 
     return (
-        <studentContext.Provider value={{ staff, isLoading }}>
+        <studentContext.Provider value={{ student, isLoading }}>
             {children}
         </studentContext.Provider>
     )

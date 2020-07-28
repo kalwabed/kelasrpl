@@ -13,48 +13,50 @@ import {
     CardDeck,
 } from 'reactstrap'
 
-import { PropsCardHero, Staff } from '../types'
+import { PropsCardHero, Student } from '../types'
 
-const CardHero: React.FC<PropsCardHero> = ({ staff }: PropsCardHero) => {
+const CardHero: React.FC<PropsCardHero> = ({ student }: PropsCardHero) => {
     return (
         <>
             <Fade>
                 <CardDeck>
-                    {staff.map((st: Staff) => (
-                        <Card
-                            className="my-3 mx-2 shadow border-light"
-                            key={st._id}
-                            style={{ maxWidth: '640px' }}
-                        >
-                            <Row noGutters>
-                                <Col className="m-1" xs={4}>
-                                    <CardImg
-                                        className="rounded-circle img-thumbnail"
-                                        src={st.imageId.imageUrl}
-                                    />
-                                </Col>
-                                <Col>
-                                    <CardBody>
-                                        <CardTitle tag="h6">
-                                            <u>{st.name}</u>
-                                        </CardTitle>
-                                        <CardText
-                                            tag="code"
-                                            className="text-center"
-                                        >
-                                            <IoMdQuote /> {st.description}
-                                        </CardText>{' '}
-                                    </CardBody>
-                                </Col>
-                            </Row>
-                        </Card>
-                    ))}
+                    {student.map((st: Student, i) =>
+                        i <= 3 ? (
+                            <Card
+                                className="my-3 mx-2 shadow border-light"
+                                key={st._id}
+                                style={{ maxWidth: '640px' }}
+                            >
+                                <Row noGutters>
+                                    <Col className="m-1" xs={4}>
+                                        <CardImg
+                                            className="rounded-circle img-thumbnail"
+                                            src={st.imageId.imageUrl}
+                                        />
+                                    </Col>
+                                    <Col>
+                                        <CardBody>
+                                            <CardTitle tag="h6">
+                                                <u>{st.name}</u>
+                                            </CardTitle>
+                                            <CardText
+                                                tag="code"
+                                                className="text-center"
+                                            >
+                                                <IoMdQuote /> {st.description}
+                                            </CardText>{' '}
+                                        </CardBody>
+                                    </Col>
+                                </Row>
+                            </Card>
+                        ) : null
+                    )}
                 </CardDeck>
             </Fade>
             <Row>
                 <Col md={{ size: 10 }} />
                 <Col>
-                    <Link to="#">
+                    <Link to="/students">
                         {' '}
                         Show more
                         <IoMdArrowRoundForward />

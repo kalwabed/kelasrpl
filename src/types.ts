@@ -3,10 +3,10 @@ export type PropsHeader = {
 }
 
 export type PropsCardHero = {
-    staff: any[]
+    student: any[]
 }
 
-export type Staff = {
+export type Student = {
     _id: string
     address: string
     name: string
@@ -26,6 +26,6 @@ export type Staff = {
 }
 
 export interface stdContext {
-    staff: any[]
+    student: any[]
     isLoading: boolean
 }
