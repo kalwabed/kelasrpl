@@ -13,7 +13,8 @@ code {
 }
 
 :hover.nav-item:not(.active) {
-  background-color: #2ea8b2
+  /* background-color: #2ea8b2; */
+  font-weight: bold;
 }
 
 .hero {
@@ -43,7 +44,10 @@ code {
 }
 
 footer {
+  position: static;
   margin-top: 13rem;
+  bottom: 0;
+  width: 100%;
   padding: 2rem 0;
   color: #fff;
   font-size: 12px;
@@ -66,10 +70,26 @@ footer {
   background: linear-gradient(to right, rgba(0, 60, 224, 0.9), rgba(44, 187, 187, 0.9));
 }
 
+.divider-ls {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, rgba(0, 60, 224, 0.9), rgba(44, 187, 187, 0.9));
+}
+
+.divider-show {
+  width: 1110px;
+  height: 5px;
+  background: linear-gradient(to right, rgba(0, 60, 224, 0.9), rgba(44, 187, 187, 0.9));
+}
+
 .hero-about img {
   margin-top: 80px;
   max-height: 15rem;
   min-height: 80%;
+}
+
+.nav-back {
+  font-size: x-large;
 }
 
 @media screen and (max-width:900px) {
@@ -78,6 +98,16 @@ footer {
     max-height: 15rem;
     min-height: 30%;
     padding: 0;
+  }
+
+  .nav-back {
+    font-size: large;
+  }
+
+  .divider-show {
+    width: 330px;
+    height: 5px;
+    background: linear-gradient(to right, rgba(0, 60, 224, 0.9), rgba(44, 187, 187, 0.9));
   }
 }
 

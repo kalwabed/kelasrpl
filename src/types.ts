@@ -2,8 +2,8 @@ export type PropsHeader = {
     navLink: string
 }
 
-export type PropsCardHero = {
-    student: any[]
+export type PropsCard<T> = {
+    student: T
 }
 
 export type Student = {
@@ -28,4 +28,6 @@ export type Student = {
 export interface stdContext {
     student: any[]
     isLoading: boolean
+    getOneStudent: Function
+    showStudent: Student | undefined
 }

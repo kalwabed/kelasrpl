@@ -13,9 +13,11 @@ import {
     CardDeck,
 } from 'reactstrap'
 
-import { PropsCardHero, Student } from '../types'
+import { PropsCard, Student } from '../types'
 
-const CardHero: React.FC<PropsCardHero> = ({ student }: PropsCardHero) => {
+const CardHero: React.FC<PropsCard<any[]>> = ({
+    student,
+}: PropsCard<any[]>) => {
     return (
         <>
             <Fade>

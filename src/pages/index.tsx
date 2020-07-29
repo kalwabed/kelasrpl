@@ -9,6 +9,8 @@ import { useStdCtx } from '../contexts/StudentProvider'
 
 const Index = () => {
     const { student, isLoading } = useStdCtx()
+    document.title = 'Home | #kitarpl1'
+    window.scrollTo(0, 0)
 
     return (
         <>

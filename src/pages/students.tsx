@@ -8,10 +8,13 @@ import { useStdCtx } from '../contexts/StudentProvider'
 
 const Students = () => {
     const { isLoading, student } = useStdCtx()
+    document.title = 'Students | #kitarpl1'
+    window.scrollTo(0, 0)
+
     return (
         <div>
             <Headers navLink="/students" />
-            <div className="mx-auto divider mt-3">
+            <div className="mx-auto text-center mt-3">
                 {isLoading && (
                     <Spinner
                         style={{
@@ -24,7 +27,7 @@ const Students = () => {
                 )}
             </div>
             {!isLoading && <ListStudents student={student} />}
-            {!isLoading && <Footer />}
+            {!isLoading && <Footer marginTop={'20rem'} />}
         </div>
     )
 }
