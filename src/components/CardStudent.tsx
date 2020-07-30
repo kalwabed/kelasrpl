@@ -9,20 +9,36 @@ import {
     Row,
     Col,
     CardImg,
+    CardFooter,
 } from 'reactstrap'
+import {
+    IoMdArrowRoundBack,
+    IoIosQuote,
+    IoIosHome,
+    IoMdStar,
+    IoIosContact,
+} from 'react-icons/io'
 
 import { Student, PropsCard } from '../types'
-import { IoMdArrowRoundBack } from 'react-icons/io'
+import icStaff from '../parts/IcStaff'
 import { Link } from 'react-router-dom'
+import { Fade } from 'react-awesome-reveal'
 
 const CardStudent: React.FC<PropsCard<Student | undefined>> = ({
     student,
 }: PropsCard<Student | undefined>) => {
+    const PosChecker = (pos?: number) => {
+        if (pos !== 0)
+            if (pos === 1) return 'Ketua'
+            else if (pos === 2) return 'Wakil'
+            else return false
+    }
+
     return (
         <div>
             <Card outline color="light">
                 <div className="divider-show mx-auto"></div>
-                <CardHeader className="mb-2">
+                <CardHeader>
                     <Link to="/students" style={{ textDecoration: 'none' }}>
                         <div className="nav-back">
                             <IoMdArrowRoundBack />
@@ -30,25 +46,58 @@ const CardStudent: React.FC<PropsCard<Student | undefined>> = ({
                         </div>
                     </Link>
                 </CardHeader>
-                <Row noGutters>
-                    <Col>
-                        <CardImg src={student?.imageId.imageUrl} />
+                <Row noGutters className="my-1">
+                    <Col sm={3} md={4}>
+                        <Card>
+                            <CardBody>
+                                <Fade delay={300}>
+                                    <CardImg src={student?.imageId.imageUrl} />
+                                </Fade>
+                            </CardBody>
+                        </Card>
                     </Col>
-                    <Col>
+                    <Col sm={'auto'} className="ml-3">
                         <CardBody>
-                            <CardTitle>{student?.name}</CardTitle>
-                            <CardText>
-                                {student?.birthPlace},{' '}
-                                {moment(student?.birthDate).format(
-                                    'DD-MMM-YYYY'
-                                )}{' '}
-                                ({moment(student?.birthDate).toNow(true)})
-                            </CardText>
-                            <CardText>{student?.address}</CardText>
-                            <CardText>{student?.description}</CardText>
+                            <Fade cascade>
+                                <CardTitle>
+                                    <h3>
+                                        <IoIosContact /> {student?.name}
+                                    </h3>
+                                    <div className="divider-profile"></div>
+                                </CardTitle>
+                                <div>
+                                    {PosChecker(student?.position) ? (
+                                        <span className="badge badge-dark h6">
+                                            {icStaff(student?.position)}{' '}
+                                            {PosChecker(student?.position)}
+                                        </span>
+                                    ) : null}
+                                </div>
+                                <CardText tag="h6">
+                                    <IoMdStar />
+                                    {student?.birthPlace},{'    '}
+                                    {moment(student?.birthDate).format(
+                                        'DD-MMM-YYYY'
+                                    )}{' '}
+                                    <b>
+                                        (
+                                        {moment(student?.birthDate).toNow(true)}
+                                        )
+                                    </b>
+                                </CardText>
+                                <CardText tag="h6">
+                                    <IoIosHome /> {student?.address}
+                                </CardText>
+                                <CardText tag="h4">
+                                    <code>
+                                        <IoIosQuote /> {student?.description}
+                                    </code>
+                                </CardText>
+                            </Fade>
                         </CardBody>
                     </Col>
                 </Row>
+                <CardFooter></CardFooter>
             </Card>
         </div>
     )

@@ -20,7 +20,7 @@ const CardHero: React.FC<PropsCard<any[]>> = ({
 }: PropsCard<any[]>) => {
     return (
         <>
-            <Fade>
+            <Fade cascade>
                 <CardDeck>
                     {student.map((st: Student, i) =>
                         i <= 3 ? (
@@ -58,7 +58,7 @@ const CardHero: React.FC<PropsCard<any[]>> = ({
             <Row>
                 <Col md={{ size: 10 }} />
                 <Col>
-                    <Link to="/students">
+                    <Link to="/students" style={{ textDecoration: 'none' }}>
                         {' '}
                         Show more
                         <IoMdArrowRoundForward />

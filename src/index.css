@@ -79,6 +79,13 @@ footer {
 .divider-show {
   width: 1110px;
   height: 5px;
+  background: #007bff;
+}
+
+.divider-profile {
+  width: 100px;
+  margin-left: 2.3rem;
+  height: 5px;
   background: linear-gradient(to right, rgba(0, 60, 224, 0.9), rgba(44, 187, 187, 0.9));
 }
 
@@ -107,7 +114,7 @@ footer {
   .divider-show {
     width: 330px;
     height: 5px;
-    background: linear-gradient(to right, rgba(0, 60, 224, 0.9), rgba(44, 187, 187, 0.9));
+    background: #007bff;
   }
 }
 

@@ -6,7 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
-localStorage.clear()
+if (process.env.NODE_ENV === 'development') {
+    localStorage.clear()
+}
 
 ReactDOM.render(
     <React.StrictMode>
