@@ -15,12 +15,14 @@ import {
     IoMdArrowRoundBack,
     IoIosQuote,
     IoIosHome,
-    IoMdStar,
     IoIosContact,
+    IoIosHeart,
+    IoIosGitCommit,
 } from 'react-icons/io'
 
 import { Student, PropsCard } from '../types'
 import icStaff from '../parts/IcStaff'
+import SocialSect from '../parts/SocialCheck'
 import { Link } from 'react-router-dom'
 import { Fade } from 'react-awesome-reveal'
 
@@ -29,8 +31,8 @@ const CardStudent: React.FC<PropsCard<Student | undefined>> = ({
 }: PropsCard<Student | undefined>) => {
     const PosChecker = (pos?: number) => {
         if (pos !== 0)
-            if (pos === 1) return 'Ketua'
-            else if (pos === 2) return 'Wakil'
+            if (pos === 1) return 'chairman'
+            else if (pos === 2) return 'vice chairman'
             else return false
     }
 
@@ -74,8 +76,8 @@ const CardStudent: React.FC<PropsCard<Student | undefined>> = ({
                                     ) : null}
                                 </div>
                                 <CardText tag="h6">
-                                    <IoMdStar />
-                                    {student?.birthPlace},{'    '}
+                                    <IoIosHeart /> {student?.birthPlace},
+                                    {'    '}
                                     {moment(student?.birthDate).format(
                                         'DD-MMM-YYYY'
                                     )}{' '}
@@ -94,10 +96,13 @@ const CardStudent: React.FC<PropsCard<Student | undefined>> = ({
                                     </code>
                                 </CardText>
                             </Fade>
+                            <SocialSect />
                         </CardBody>
                     </Col>
                 </Row>
-                <CardFooter></CardFooter>
+                <CardFooter className="text-center" tag="h5">
+                    <IoIosGitCommit />
+                </CardFooter>
             </Card>
         </div>
     )

@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-    CardDeck,
     Card,
     CardImg,
     CardBody,
@@ -43,74 +42,72 @@ const ListStudents: React.FC<PropsCard<any[]>> = ({
                         <Input placeholder="Cari seseorang" />
                     </InputGroup>
                 </Col>
-                <Col md={2}></Col>
+                <Col md={2} />
             </Row>
             <Container>
-                <Fade cascade>
-                    <CardDeck>
-                        {student.map((std: Student, i) => (
-                            <Col md={3} sm={5} key={std._id} className="my-2">
-                                {i % 2 === 0 ? (
-                                    <Card
-                                        body
-                                        outline
-                                        color="primary"
-                                        className="shadow"
-                                    >
-                                        <CardImg
-                                            top
-                                            width="10%"
-                                            className="rounded-circle img-thumbnail"
-                                            src={std.imageId.imageUrl}
-                                            alt={std.name}
-                                        />
-                                        <CardBody className="text-center">
-                                            <CardText className="h6 ">
-                                                {std.name}
-                                            </CardText>
-                                            <Link
-                                                onClick={() =>
-                                                    getOneStudent(std._id)
-                                                }
-                                                className="btn btn-outline-primary btn-sm"
-                                                to={`/students/${std._id}`}
-                                            >
-                                                show
-                                            </Link>
-                                        </CardBody>
-                                    </Card>
-                                ) : (
-                                    <Card
-                                        body
-                                        inverse
-                                        color="primary"
-                                        className="shadow"
-                                    >
-                                        <CardImg
-                                            top
-                                            className="rounded-circle img-thumbnail"
-                                            src={std.imageId.imageUrl}
-                                            alt={std.name}
-                                        />
-                                        <CardBody className="text-center">
-                                            <CardText className="h6 ">
-                                                {std.name}
-                                            </CardText>
-                                            <Link
-                                                onClick={() =>
-                                                    getOneStudent(std._id)
-                                                }
-                                                className="btn btn-outline-light btn-sm"
-                                                to={`/students/${std._id}`}
-                                            >
-                                                show
-                                            </Link>
-                                        </CardBody>
-                                    </Card>
-                                )}
-                            </Col>
-                        ))}
-                    </CardDeck>
+                <Fade className="card-deck" cascade>
+                    {student.map((std: Student, i) => (
+                        <Col md={3} sm={5} key={std._id} className="my-2">
+                            {i % 2 === 0 ? (
+                                <Card
+                                    body
+                                    outline
+                                    color="primary"
+                                    className="shadow"
+                                >
+                                    <CardImg
+                                        top
+                                        width="10%"
+                                        className="rounded-circle img-thumbnail"
+                                        src={std.imageId.imageUrl}
+                                        alt={std.name}
+                                    />
+                                    <CardBody className="text-center">
+                                        <CardText className="h6 ">
+                                            {std.name}
+                                        </CardText>
+                                        <Link
+                                            onClick={() =>
+                                                getOneStudent(std._id)
+                                            }
+                                            className="btn btn-outline-primary btn-sm"
+                                            to={`/students/${std._id}`}
+                                        >
+                                            show
+                                        </Link>
+                                    </CardBody>
+                                </Card>
+                            ) : (
+                                <Card
+                                    body
+                                    inverse
+                                    color="primary"
+                                    className="shadow"
+                                >
+                                    <CardImg
+                                        top
+                                        className="rounded-circle img-thumbnail"
+                                        src={std.imageId.imageUrl}
+                                        alt={std.name}
+                                    />
+                                    <CardBody className="text-center">
+                                        <CardText className="h6 ">
+                                            {std.name}
+                                        </CardText>
+                                        <Link
+                                            onClick={() =>
+                                                getOneStudent(std._id)
+                                            }
+                                            className="btn btn-outline-light btn-sm"
+                                            to={`/students/${std._id}`}
+                                        >
+                                            show
+                                        </Link>
+                                    </CardBody>
+                                </Card>
+                            )}
+                        </Col>
+                    ))}
                 </Fade>
             </Container>
         </div>
