@@ -22,7 +22,7 @@ import {
 
 import { Student, PropsCard } from '../types'
 import icStaff from '../parts/IcStaff'
-import SocialSect from '../parts/SocialCheck'
+import SocialSection from '../parts/SocialSection'
 import { Link } from 'react-router-dom'
 import { Fade } from 'react-awesome-reveal'
 
@@ -96,7 +96,10 @@ const CardStudent: React.FC<PropsCard<Student | undefined>> = ({
                                     </code>
                                 </CardText>
                             </Fade>
-                            <SocialSect />
+                            <SocialSection
+                                key={student?._id! + 12}
+                                social={student?.socialId}
+                            />
                         </CardBody>
                     </Col>
                 </Row>

@@ -39,7 +39,7 @@ const Header: React.FC<PropsHeader> = ({ navLink = '' }: PropsHeader) => {
                                     </Link>
                                 </NavItem>
                             </Nav>
-                            <Nav className="mr-auto" navbar>
+                            {/* <Nav className="mr-auto" navbar>
                                 <NavItem
                                     className={
                                         navLink === '/about' ? 'active' : ''
@@ -49,7 +49,7 @@ const Header: React.FC<PropsHeader> = ({ navLink = '' }: PropsHeader) => {
                                         About
                                     </Link>
                                 </NavItem>
-                            </Nav>
+                            </Nav> */}
                         </Collapse>
                     </Container>
                 </Navbar>

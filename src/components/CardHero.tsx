@@ -50,7 +50,7 @@ const CardHero: React.FC<PropsCard<any[]>> = ({
                             </Row>
                         </Card>
                     ) : (
-                        <div></div>
+                        <div key={st._id}></div>
                     )
                 )}
             </Fade>

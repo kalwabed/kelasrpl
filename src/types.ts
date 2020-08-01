@@ -31,3 +31,12 @@ export interface stdContext {
     getOneStudent: Function
     showStudent: Student | undefined
 }
+
+export type socialProps = {
+    social?: [
+        {
+            socialName: string
+            socialUrl: string
+        }
+    ]
+}
