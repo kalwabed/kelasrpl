@@ -5,11 +5,15 @@ export const fetchStudent = async () => {
     try {
         let token: any
         if (!localStorage.getItem('student')) {
-            const data = await (await fetch(endpoint)).json()
-            token = JSON.stringify(data).slice(1, -1)
-            //? data yang diperoleh dijadikan string dan menghapus tanda petik sehingga menghasilkan 'plain string' tanpa tanda petik, yang selanjutnya akan dicek oleh jwt
-            localStorage.setItem('student', token)
-            // ? data disimpan di localstorage supaya request ke API hanya ketika baru masuk dan saat refresh page
+            try {
+                const data = await (await fetch(endpoint)).json()
+                token = JSON.stringify(data).slice(1, -1)
+                //? data yang diperoleh dijadikan string dan menghapus tanda petik sehingga menghasilkan 'plain string' tanpa tanda petik, yang selanjutnya akan dicek oleh jwt
+                localStorage.setItem('student', token)
+                // ? data disimpan di localstorage supaya request ke API hanya ketika baru masuk dan saat refresh page
+            } catch (err) {
+                console.error(err)
+            }
         } else {
             token = localStorage.getItem('student')
         }

@@ -7,6 +7,8 @@ import Footer from '../components/Footer'
 
 const ShowStudent = () => {
     const { showStudent } = useStdCtx()
+    document.title = `${showStudent?.name} | #kitarpl1`
+    window.scrollTo(0, 0)
 
     return (
         <>
