@@ -22,10 +22,12 @@ const Header: React.FC<PropsHeader> = ({ navLink = '' }: PropsHeader) => {
                     expand="md"
                     dark
                     color={navLink !== '/' ? 'primary' : ''}
-                    className="navbar-dark fixed-top hero-nb mb-3"
+                    className={`navbar-dark ${
+                        navLink !== '/' ? 'fixed-top' : ''
+                    }`}
                 >
                     <Container>
-                        <Link to="/" className="navbar-brand mx-3">
+                        <Link to="/" className="navbar-brand">
                             #kitarpl1
                         </Link>
                         <NavbarToggler onClick={toggle} />
