@@ -6,15 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
-if (process.env.NODE_ENV === 'development') {
-    localStorage.clear()
-}
-
 ReactDOM.render(
     <React.StrictMode>
         <App />
     </React.StrictMode>,
-    document.getElementById('root')
+    document.getElementById('root'),
 )
 
 // If you want your app to work offline and load faster, you can change

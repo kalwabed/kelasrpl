@@ -99,12 +99,18 @@ footer {
   font-size: x-large;
 }
 
+/* on mobile */
 @media screen and (max-width:900px) {
   .hero-about img {
     margin-top: -200px;
     max-height: 15rem;
     min-height: 30%;
     padding: 0;
+  }
+
+  .hero-nb {
+    position: sticky;
+    background-color: linear-gradient(to right, rgba(0, 60, 224, 0.9), rgba(44, 187, 187, 0.9));
   }
 
   .nav-back {
@@ -116,10 +122,6 @@ footer {
     height: 5px;
     background: #007bff;
   }
-}
-
-.hero-nb {
-  background-color: linear-gradient(to right, rgba(0, 60, 224, 0.9), rgba(44, 187, 187, 0.9));
 }
 
 .list-student {
