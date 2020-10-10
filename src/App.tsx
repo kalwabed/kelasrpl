@@ -9,18 +9,18 @@ import ShowStudent from './pages/showStudent'
 import StudentProvider from './contexts/StudentProvider'
 
 function App() {
-    return (
-        <>
-            <Router>
-                <StudentProvider>
-                    <Route exact path="/" component={IndexPage} />
-                    <Route path="/about" component={AboutPage} />
-                    <Route exact path="/students" component={StudentsPage} />
-                    <Route path="/students/:id" component={ShowStudent} />
-                </StudentProvider>
-            </Router>
-        </>
-    )
+	return (
+		<>
+			<Router>
+				<StudentProvider>
+					<Route exact path='/' component={IndexPage} />
+					<Route path='/about' component={AboutPage} />
+					<Route exact path='/students' component={StudentsPage} />
+					<Route path='/students/:id' component={ShowStudent} />
+				</StudentProvider>
+			</Router>
+		</>
+	)
 }
 
 export default App
